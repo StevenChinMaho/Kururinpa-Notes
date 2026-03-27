@@ -40,6 +40,32 @@ git fetch origin             # 只拉取更新，不合併 (比較安全)
 git push origin main         # 推送本地變更到遠端
 ```
 
+### Git追蹤檔案移除 (保留在本地)
+
+當檔案已經被 Git 追蹤了，但想讓它 **保留在本地檔案系統**，同時 **停止被 Git 追蹤**。這可以透過以下步驟完成：
+
+#### 操作步驟
+
+1. **先把檔案加入** `.gitignore`：
+    
+```bash
+file.txt
+```
+    
+2. **從 Git 索引移除，但保留檔案本體** 執行以下指令：
+    
+```bash
+git rm --cached file.txt
+```
+    
+`--cached` 的意思是：只從 Git 的追蹤索引移除，不會刪掉你本地的檔案。
+        
+3. **提交變更**
+
+```bash
+git commit -m "Stop tracking workspace.json"
+```
+
 ### 合併衝突救星 (Merge Conflict)
 
 當 `git merge` 或 `git pull` 出現 `CONFLICT` 時，Git 會暫停合併動作。
