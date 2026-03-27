@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "6af1a2d228caadf4",
+        "id": "b9dc654a3a847b56",
         "type": "tabs",
         "children": [
           {
-            "id": "5d3ce4f7c0d99c3f",
+            "id": "6f05e965e5103f9f",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: workspace.json  (Working Tree)"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新分頁"
             }
           }
         ]
@@ -194,7 +190,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5d3ce4f7c0d99c3f",
+  "active": "4cc3c234e01d387b",
   "lastOpenFiles": [
     "工程數學/1.5 Linear ODEs. Bernoulli equation. Population dynamics.md",
     "Linux筆記/Disk Management.md",
