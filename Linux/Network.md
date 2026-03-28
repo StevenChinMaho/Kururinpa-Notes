@@ -31,5 +31,6 @@ sudo ss -tulpn | grep 8080  # 查詢 Port 8080 是誰在用
 ```bash
 ping google.com -c 4      # Ping 4 次後停止
 curl ifconfig.me          # 查詢本機對外的 Public IP
-wget [url]                # 下載檔案
+curl -O [url]             # 下載檔案，檔名為伺服器上的檔名
+wget [url]                # 下載檔案，檔名可能很亂
 ```

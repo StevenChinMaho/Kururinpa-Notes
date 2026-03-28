@@ -16,7 +16,7 @@ git clone [repo_url]                         # 從遠端複製儲存庫下來
 git status                   # 查看目前檔案狀態 (最常用！)
 git add .                    # 將所有變更加入暫存區 (Stage)
 git add file.txt             # 僅加入特定檔案
-git commit -m "commit訊息"   # 提交變更
+git commit -m "foo"          # 提交變更
 git diff                     # 查看工作目錄與暫存區的差異
 ```
 
@@ -28,6 +28,7 @@ git branch new-feature       # 建立一個名為 new-feature 的新分支
 git checkout new-feature     # 切換到該分支
 git switch new-feature       # (新版指令) 切換分支，比 checkout 更直觀
 git checkout -b fix-bug      # 建立並同時切換到 fix-bug 分支
+git restore -- <file>        # 還原檔案到最近 commit 狀態
 git merge new-feature        # 將 new-feature 分支合併到目前所在分支
 ```
 
@@ -39,6 +40,19 @@ git pull origin main         # 拉取遠端更新並合併 (Fetch + Merge)
 git fetch origin             # 只拉取更新，不合併 (比較安全)
 git push origin main         # 推送本地變更到遠端
 ```
+
+### 其他常用指令
+
+```bash
+git mv                       # 移動或重新命名檔案 (包含大小寫差異)
+git rm                       # 從版本控制中移除檔案 (加上--cached則不刪除實體檔案)
+git clean                    # 移除工作目錄中未追蹤的檔案或目錄
+git reset <file>             # 取消暫存某個檔案 (從 staging area 移除，但保留修改)
+git ls-files                 # 列出 Git 目前追蹤的檔案
+git log -- <file>            # 查看某個檔案的修改歷史
+```
+
+---
 
 ### Git追蹤檔案移除 (保留在本地)
 
@@ -55,15 +69,8 @@ file.txt
 2. **從 Git 索引移除，但保留檔案本體** 執行以下指令：
     
 ```bash
-git rm --cached file.txt
-```
-    
-`--cached` 的意思是：只從 Git 的追蹤索引移除，不會刪掉你本地的檔案。
-        
-3. **提交變更**
-
-```bash
-git commit -m "Stop tracking workspace.json"
+git rm --cached file.txt               # --cached 不刪除實體檔案
+git commit -m "Stop tracking file.txt" # 提交變更
 ```
 
 ### 合併衝突救星 (Merge Conflict)
@@ -102,7 +109,8 @@ git commit -m "Stop tracking workspace.json"
     ```bash
     git merge --abort            # 回到合併前的狀態，當作沒發生過
     ```
-    
+		
+---
 
 ### 後悔藥與暫存 (Undo & Stash)
 
