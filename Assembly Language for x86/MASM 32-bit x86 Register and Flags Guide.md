@@ -1,8 +1,10 @@
+# MASM 32-bit x86 Register and Flags Guide
+
 在撰寫 MASM 程式時，選擇正確的暫存器與理解旗標的變化，是控制程式邏輯與記憶體存取的關鍵。
 
 ---
 
-### 1. 通用暫存器 (General-Purpose Registers)
+## 1. 通用暫存器 (General-Purpose Registers)
 
 這八個 32 位元暫存器主要用於算術運算與資料搬移 。雖然稱為「通用」，但在某些特定指令（如乘除法、字串處理、迴圈）中，硬體會強制或預設使用特定的暫存器。
 
@@ -26,7 +28,7 @@
 
 ---
 
-### 2. 區段暫存器 (Segment Registers)
+## 2. 區段暫存器 (Segment Registers)
 
 在 16 位元真實模式 (Real-address mode) 下，這些暫存器儲存記憶體區段的基底位址。但在 32 位元保護模式 (Protected mode) 的「平坦記憶體模型 (Flat Memory Model)」下，MASM 開發者通常不需要手動更改它們，作業系統會自動處理 。
 
@@ -39,7 +41,7 @@
 
 ---
 
-### 3. 狀態旗標 (Status Flags)
+## 3. 狀態旗標 (Status Flags)
 
 旗標位於 **EFLAGS** 暫存器中。每一個旗標都是一個獨立的二進位位元 (bit) 。它們會反映 CPU 執行算術或邏輯運算（如 `ADD`, `SUB`, `CMP`, `AND`）後的結果 。 在 MASM 中，我們主要透過這些旗標來配合**條件跳躍指令**（例如 `JZ`, `JC`, `JG`）以實現 `if-else` 或 `while` 等邏輯控制。
 
