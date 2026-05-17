@@ -228,7 +228,16 @@ call SetTextColor
 |magenta|5|洋紅|
 |brown|6|棕|
 |lightGray|7|淺灰|
+|gray|8|灰|
+|lightBlue|9|淺藍|
+|lightGreen|10|淺綠|
+|lightCyan|11|淺青|
+|lightRed|12|淺紅|
+|lightMagenta|13|淺洋紅|
+|yellow|14|黃|
 |white|15|白|
+
+![[Irvine32_Colors.png]]
 
 ---
 
