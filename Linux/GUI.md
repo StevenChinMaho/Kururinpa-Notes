@@ -59,7 +59,7 @@ sudo systemctl isolate graphical.target
 *如果你不想改變整個系統的 Target，只想單純地把「負責畫面的服務」開起來或關掉，可以直接控制顯示管理器 (Ubuntu 預設為 `gdm3`)。*
 
 *   **手動啟動桌面服務**
-* 
+  
 ```bash
 sudo systemctl start gdm3
 ```
@@ -68,7 +68,6 @@ sudo systemctl start gdm3
     
 ```bash
 sudo systemctl stop gdm3
-
 ```
 
 *   **重新啟動桌面服務 (當 GUI 卡死但 TTY 還能用時)**
